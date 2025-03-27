@@ -105,4 +105,12 @@ git remote add origin [URL que te da el Repo]
 ```
 git push -u origin [nombre de la rama]
 ```
-## vgiteo
+## Para forzar la combinacion entre historiales no relacionados usa:
+```
+git pull origin main --allow-unrelated-histories
+```
+##  Fusiona Rama en main permitiendo historiales no relacionados:
+Aqui tienes que usar la Rama que quieres emparejar con main:
+```
+git merge [Rama] --allow-unrelated-histories
+```
