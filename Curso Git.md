@@ -89,7 +89,7 @@ git branch
 ```
 ## Para Crear una Nueva Rama usa:
 ```
-git checkot -b [Nombre de la rama]
+git checkout -b [Nombre de la rama]
 ```
 ## para traer los cambio de una rama a otra usa:
 Debes estar en la rama main para poder traer la otra a ella.
@@ -105,3 +105,4 @@ git remote add origin [URL que te da el Repo]
 ```
 git push -u origin [nombre de la rama]
 ```
+## vgiteo
