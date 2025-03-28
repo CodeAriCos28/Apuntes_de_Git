@@ -25,6 +25,12 @@ Para Linux y mac usa:
 ```
 git config --global core.editor input
 ```
+## para que git siempre escoja a la rama main por defecto usa:
+
+```
+git config --global init.defaultBranch main
+```
+
 ## Para inicial un repositorio usa:
 ```
 git ini
@@ -114,3 +120,26 @@ Aqui tienes que usar la Rama que quieres emparejar con main:
 ```
 git merge [Rama] --allow-unrelated-histories
 ```
+## Para subir los cambios fucionados entre una Rama a Otra usa:
+```
+git push origin [Rama que estas]
+```
+## Para Descarga la información más reciente del repositorio remoto usa:
+Antes de crear o cambiar a una rama que pueda existir en el remoto.
+```
+git fetch origin
+```
+## Para renombrar la rama master a main usa:
+```
+git branch -m master main
+```
+## Para Borrar la Rama remota usa:
+```
+git push origin --delete main
+```
+## Para Sobreescribir en el remoto usa:
+verificando que tengas la copia actualizada y si alguien escribio abortar:
+```
+git push -u origin main --force-with-lease
+```
+
