@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Git - Comandos Copiables</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        #markdown-content {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #0c1114;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #0a0e11;
+            margin-top: 25px;
+        }
+        .code-container {
+            position: relative;
+            margin: 15px 0;
+        }
+        pre {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 0;
+            position: relative;
+        }
+        .copy-btn {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background: #2a64e1;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            padding: 3px 8px;
+            font-size: 12px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        .copy-btn:hover {
+            opacity: 1;
+        }
+        .copied {
+            background: #2ecc71 !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="markdown-content"></div>
+
+    <script>
+        const markdownContent = `# Hola Mundo Curso de Git
+
+# Configurar git 
+## Para configurar el Nombre de tu Git usa:
+\`\`\`bash
+git config --global user.name "Tu nombre"
+\`\`\`
+## Para configurar Git con el correo electrónico usa:
+\`\`\`bash 
+git config --global user.email "Tu correo"
+\`\`\`
+## Para que Git tenga a VSCode Como Predeterminado Usa:
+\`\`\`bash
+git config --global core.editor "code --wait"
+\`\`\`
+## Para ver el Archivo de configuración Usa:
+\`\`\`bash
+git config --global -e
+\`\`\`
+## Para que Git sepa como tratar los saltos de linea entre Linux y Windows usa:
+\`\`\`bash
+git config --global core.autocrlf true
+\`\`\`
+Para Linux y mac usa:
+\`\`\`bash
+git config --global core.autocrlf input
+\`\`\`
+## Para que git siempre escoja a la rama main por defecto usa:
+\`\`\`bash
+git config --global init.defaultBranch main
+\`\`\`
+
+## Para inicializar un repositorio usa:
+\`\`\`bash
+git init
+\`\`\`
+## Para ver el estado actual del repositorio usa:
+\`\`\`bash
+git status
+\`\`\`
+Para mejor formato del estado usa:
+\`\`\`bash
+git status -s
+\`\`\`
+## Para seleccionar los archivos usa:
+Selecciona todos los archivos:
+\`\`\`bash
+git add .
+\`\`\`
+Selecciona los archivos que quieres subir (si son varios sepáralos por espacio):
+\`\`\`bash
+git add [Nombre de los archivos]
+\`\`\`
+## Para comentar los archivos usa:
+\`\`\`bash
+git commit -m "di que hiciste"
+\`\`\`
+## Para eliminar Archivos usa:
+\`\`\`bash
+git rm [Nombre del Archivo]
+\`\`\`
+Para renombrar usa:
+\`\`\`bash
+git mv [Nombre actual del Archivo] [Nombre nuevo]
+\`\`\`
+## Para Sacar algún cambio que hayamos hecho usa:
+\`\`\`bash
+git restore --staged [Nombre del Archivo]
+\`\`\`
+## Para recuperar algún Archivo Usa:
+\`\`\`bash
+git restore [Nombre del Archivo]
+\`\`\`
+## Para ver cuales son los cambios que vamos a agregar usa:
+Muestra todos los cambios que todavía no hemos subido:
+\`\`\`bash
+git diff 
+\`\`\`
+Este comando nos muestra los cambios que puedes commitear:
+\`\`\`bash
+git diff --staged
+\`\`\`
+## Para ver el historial de los commits:
+\`\`\`bash
+git log --oneline
+\`\`\`
+o también el normal:
+\`\`\`bash
+git log
+\`\`\`
+## Para verificar en que rama estas usa:
+\`\`\`bash
+git branch
+\`\`\`
+## Para Crear una Nueva Rama usa:
+\`\`\`bash
+git checkout -b [Nombre de la rama]
+\`\`\`
+## Para traer los cambios de una rama a otra usa:
+Debes estar en la rama main para poder traer la otra a ella:
+\`\`\`bash
+git merge [nombre de la rama que queremos traer a main]
+\`\`\`
+
+# Github
+## Para activar el repositorio remoto de github usa:
+\`\`\`bash
+git remote add origin [URL que te da el Repo]
+\`\`\`
+## Para Activar la Rama Main en el Repo de Github usa:
+\`\`\`bash
+git push -u origin [nombre de la rama]
+\`\`\`
+## Para forzar la combinación entre historiales no relacionados usa:
+\`\`\`bash
+git pull origin main --allow-unrelated-histories
+\`\`\`
+## Fusiona Rama en main permitiendo historiales no relacionados:
+Aquí tienes que usar la Rama que quieres emparejar con main:
+\`\`\`bash
+git merge [Rama] --allow-unrelated-histories
+\`\`\`
+## Para subir los cambios fusionados entre una Rama a Otra usa:
+\`\`\`bash
+git push origin [Rama que estas]
+\`\`\`
+## Para descargar la información más reciente del repositorio remoto usa:
+Antes de crear o cambiar a una rama que pueda existir en el remoto:
+\`\`\`bash
+git fetch origin
+\`\`\`
+## Para renombrar la rama master a main usa:
+\`\`\`bash
+git branch -m master main
+\`\`\`
+## Para Borrar la Rama remota usa:
+\`\`\`bash
+git push origin --delete master
+\`\`\`
+## Para Sobreescribir en el remoto usa:
+Verificando que tengas la copia actualizada y si alguien escribió abortar:
+\`\`\`bash
+git push -u origin main --force-with-lease
+\`\`\`
+## Para cambiar permanentemente el comportamiento de git pull en todos los Repositorios de Git usa:
+Haciendo que siempre use rebase en lugar de merge al traer cambios del repositorio remoto:
+\`\`\`bash
+git config --global pull.rebase true
+\`\`\``;
+        marked.setOptions({
+            highlight: function(code, lang) {
+                if (lang && hljs.getLanguage(lang)) {
+                    return hljs.highlight(lang, code).value;
+                }
+                return hljs.highlightAuto(code).value;
+            },
+            langPrefix: 'hljs language-',
+            breaks: true
+        });
+
+        // Renderizar el Markdown
+        document.getElementById('markdown-content').innerHTML = marked.parse(markdownContent);
+
+        // Añadir botones de copia después de renderizar
+        document.querySelectorAll('pre').forEach((pre) => {
+            const container = document.createElement('div');
+            container.className = 'code-container';
+            pre.parentNode.insertBefore(container, pre);
+            container.appendChild(pre);
+            
+            const button = document.createElement('button');
+            button.className = 'copy-btn';
+            button.textContent = 'Copiar';
+            container.appendChild(button);
+            
+            button.addEventListener('click', () => {
+                const code = pre.querySelector('code').innerText;
+                navigator.clipboard.writeText(code).then(() => {
+                    button.textContent = '¡Copiado!';
+                    button.classList.add('copied');
+                    setTimeout(() => {
+                        button.textContent = 'Copiar';
+                        button.classList.remove('copied');
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
