@@ -217,6 +217,10 @@ git push -u origin main --force-with-lease
 Haciendo que siempre use rebase en lugar de merge al traer cambios del repositorio remoto:
 \`\`\`bash
 git config --global pull.rebase true
+\`\`\`
+## Para remover el un remote usa:
+\`\`\`bash
+git remote remove origin
 \`\`\``;
         marked.setOptions({
             highlight: function(code, lang) {

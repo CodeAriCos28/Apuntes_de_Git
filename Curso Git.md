@@ -142,4 +142,12 @@ verificando que tengas la copia actualizada y si alguien escribio abortar:
 ```
 git push -u origin main --force-with-lease
 ```
-
+## para cambiar permanentemente el comportamiento de git pull en todos los Repositorios de Git usa:
+haciendo que siempre use rebase en lugar de merge al traer cambios del repositorio remoto:
+```
+git config --global pull.rebase true
+```
+## Para remover el un remote usa:
+```
+git remote remove origin
+```
